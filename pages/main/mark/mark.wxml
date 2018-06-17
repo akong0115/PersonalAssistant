@@ -1,0 +1,22 @@
+<!--pages/main/mark/mark.wxml-->
+<view class='mark'>
+  <view class='day-con'>
+    <text class='day'>{{time}}</text>
+    <icon type='success' class='outport'></icon>
+  </view>
+  <view class='main-con'>
+    <view class='tag-con'>
+      <text class='tag'>tag1</text>
+      <text class='tag'>tag2</text>
+      <text class='tag'>tag2</text>
+    </view>
+    <text space="true" class='word' id='word'style="{{showMore==true?'-webkit-line-clamp: 999;':'-webkit-line-clamp: 7;'}}">{{word}}</text>
+    <button class='more-btn' catchtap="showAll">全文</button>
+       <view class='imgs'>
+        <image wx:for="{{imgs}}" src="{{item}}" data-src="{{item}}" data-list="{{imgs}}" class='img' catchtap="showImg" mode="aspectFill"></image>
+       </view>
+       <text class='time'>17:08  星期天</text>
+       <button class='delete-btn'catchtap="deleteWord">删除</button>
+       <view class='location'>浙江  杭州  下沙高教园区2号大街5号</view>
+  </view>
+</view>
