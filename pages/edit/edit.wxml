@@ -1,0 +1,11 @@
+<!--pages/edit/edit.wxml-->
+<view class='edit'>
+  <form>
+    <textarea></textarea>
+  </form>
+ <view class='tags-con'>
+  <view class='tag'></view>
+  <view class='tag'></view>
+  <view class='tag'></view>
+ </view>
+</view>

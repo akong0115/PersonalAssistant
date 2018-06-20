@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "mark":"./mark/mark"
+    "mark":"./mark/mark",
+    "personal":"./personal/personal"
   }
 }

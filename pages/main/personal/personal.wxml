@@ -1,0 +1,22 @@
+<!--pages/main/personal/personal.wxml-->
+<view>
+  <view class='wc'>
+    <image class='head-img'></image>
+    <view>
+      <text class='phone'></text>
+      <text class='mark-num'></text>
+    </view>
+  </view>
+  <view class='wc'>
+    <text class='last-login'>上次登录</text>
+    <text class='last-login-time'>2018-06-10 20:51:34</text>
+  </view>
+  <view class='wc'>
+    <text>事项数量</text>
+    <text>1000条</text>
+  </view>
+ <view class='wc'>
+  <text>软件信息</text>
+  <text>V1.0</text>
+ </view>
+</view>

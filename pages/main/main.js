@@ -1,18 +1,41 @@
 // pages/main/main.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    open: false,
+    markData:null,
+    isLoaded:false,
+    pink: '#F38181'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let _this=this;
+    console.log('mainonload');
+    wx.request({
+      url: `http://tp5.com/personalmark/${app.globalData.userInfo.nickName}`,
+      data: {
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        console.log('success');
+        if(res.data!==null){
+          _this.setData({
+            markData:res.data,
+            isLoaded:true
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -62,5 +85,22 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  tap_ch: function (e) {
+    if (this.data.open) {
+      this.setData({
+        open: false
+      });
+    } else {
+      this.setData({
+        open: true
+      });
+    }
+  },
+  addMark:function(e){
+    console.log('add');
+    wx.navigateTo({
+      url: '../add/add',
+    })
   }
 })

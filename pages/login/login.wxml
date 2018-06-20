@@ -1,2 +1,10 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class='login'>
+  <form>
+    <image class='head-img' src='../../images/default.jpg' mode='aspectFill'></image>
+    <input focus='true' placeholder='请输入手机号' placeholder-class='placeholder' data-phone="{{phone}}" bindinput="setPhone" value='{{phone}}'></input>
+    <input password='true' placeholder='请输入密码' placeholder-class='placeholder' data-pwd="{{password}}" bindinput="setPwd" value='{{password}}'></input>
+    <button class='login-btn' catchtap='login'>登陆</button>
+  </form>
+  <button class='regis-btn' catchtap='register'>去注册</button>
+</view>

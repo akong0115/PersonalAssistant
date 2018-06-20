@@ -1,3 +1,21 @@
 <!--pages/main/main.wxml-->
-<mark></mark>
-<mark></mark>
+<view class='page'>
+<progress activeColor='{{pink}}' percent="90" active wx:if="{{!isLoaded}}"/>
+  <view class="page-bottom" wx:if="{{isLoaded}}">
+    <view class="page-content">
+      <personal></personal>
+    </view>
+  </view>
+  <view class="content page-top {{open ? 'c-state1' : ''}}">
+    <view class='menu'>
+      <view class='iconfont icon-menu' catchtap="tap_ch"></view>
+      <view class='right'>
+        <view class='iconfont icon-add' catchtap='addMark'></view>
+        <view class='iconfont icon-upload'></view>
+      </view>
+    </view>
+    <view wx:for="{{markData}}" wx:key="id" >
+      <mark markData="{{markData}}" imgs="{{item.imgs}}" word="{{item.word}}" location="{{item.location}}" tags="{{item.tags}}" upload="{{item.upload}}" time="{{item.create_at}}"></mark>
+    </view>
+  </view>
+</view>

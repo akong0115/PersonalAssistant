@@ -1,16 +1,21 @@
 {
-  "pages":[
+  "pages": [
+    "pages/add/add",
     "pages/index/index",
     "pages/main/main",
-    "pages/logs/logs",
-    "pages/login/login"
+    
+    "pages/login/login",
+    "pages/edit/edit",
+    "pages/register/register",
+    "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#95E1D3",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":true
+    "navigationBarTitleText": "个人助理",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eee",
+    "enablePullDownRefresh": true
   },
   "debug": true
 }

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    phone:"",
+    password:""
   },
 
   /**
@@ -62,5 +63,60 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  setPhone:function(e){
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  setPwd:function(e){
+    this.setData({
+      password: e.detail.value
+    })
+  },
+  login:function(e){
+    console.log('login')
+    var phone=this.data.phone;
+    var password=this.data.password;
+    wx.request({
+      url: `http://tp5.com/personaluser/${phone}/${password}`, 
+      data: {
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        // console.log(res.data)
+        if(res.data===null){
+          wx.showToast({
+            title: '用户不存在',
+            icon:'none'
+          })
+        }else{
+          if(res.statusCode===404){
+            wx.showToast({
+              title: '用户名密码不能为空',
+              icon:'none'
+            })
+          }else{
+            if(res.data.status==='ok'){
+              wx.navigateTo({
+                url: '../main/main'
+              })
+            }else{
+              wx.showToast({
+                title: '用户名、密码错误',
+                icon: 'none'
+              })
+            }
+          }
+        }
+      }
+    })
+  },
+  register:function(e){
+    wx.navigateTo({
+      url: '../register/register',
+    })
   }
 })

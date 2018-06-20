@@ -1,0 +1,19 @@
+<!--pages/add/add.wxml-->
+<view class='add'>
+  <textarea class='word' placeholder='请输入笔记内容'></textarea>
+  <view class='tags-con'>
+    <text class='tag'>tag1</text>
+    <text class='tag'>tag1</text>
+    <text class='tag'>tag1</text>
+    <text class='tag tag-add' catchtap='addTag'>add</text>
+  </view>
+  <view class='img-con'>
+    <image class='img'></image>
+    <image class='img-add'></image>
+  </view>
+  <view>所在位置</view>
+  <view>提醒事项<switch bindchange="switchChange" color="#95E1D3"/></view>
+</view>
+<modal hidden="{{hidden}}" title="添加Tag" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+    <input placeholder='输入tag' bindblur='newTag'  value="{{tagInpput}}"></input>
+</modal>

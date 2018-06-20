@@ -1,0 +1,15 @@
+<!--pages/register/register.wxml-->
+<view class='login'>
+  <form>
+    <image class='head-img' src='{{imgSrc}}' mode='aspectFill' catchtap='addHead'>
+      <view class='iconfont icon-add' wx:if="{{!isAddHead}}"></view>
+    </image>
+    <input focus='true' placeholder='请输入手机号' placeholder-class='placeholder' data-phone="{{phone}}" bindinput="setPhone" value='{{phone}}'></input>
+    <input password='true' placeholder='请输入密码' placeholder-class='placeholder' data-pwd="{{password1}}" bindinput="setPwd1" value='{{password1}}'></input>
+    <view class='hor-con code-con'>
+      <input placeholder='请输入验证码' placeholder-class='placeholder' class='code-input'></input>
+      <button class='code-btn' catchtap='sendCode'>{{sendCodeText}}</button>
+    </view>
+    <button class='login-btn' catchtap='register'>注册</button>
+  </form>
+</view>
